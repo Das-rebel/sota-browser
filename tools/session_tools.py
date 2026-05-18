@@ -114,14 +114,10 @@ def register(manager) -> Dict[str, Callable]:
     handlers: Dict[str, Callable] = {}
 
     async def browser_create_session(**kwargs):
+        opts = {k: v for k, v in kwargs.items() if k not in ("user_id",) and v is not None}
         return await manager.create_session(
             kwargs.get("user_id", "default"),
-            width=kwargs.get("width"),
-            height=kwargs.get("height"),
-            proxy=kwargs.get("proxy"),
-            user_agent=kwargs.get("user_agent"),
-            timezone=kwargs.get("timezone"),
-            locale=kwargs.get("locale"),
+            **opts,
         )
     handlers["browser_create_session"] = browser_create_session
 

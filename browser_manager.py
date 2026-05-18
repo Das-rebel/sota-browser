@@ -143,7 +143,7 @@ class BrowserManager:
                 }
 
         context = await self._browser.new_context(
-            viewport={"width": options.get("width", 1280), "height": options.get("height", 720)},
+            viewport={"width": options.get("width") or 1280, "height": options.get("height") or 720},
             user_agent=USER_AGENT,
             locale="en-US",
             timezone_id="America/New_York",
