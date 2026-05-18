@@ -1,0 +1,37 @@
+[project]
+name = "sota-browser"
+version = "2.0.0"
+description = "SOTA Browser MCP Server — 56 tools, modular architecture, middleware pipeline"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Das-rebel"}]
+keywords = ["browser", "automation", "mcp", "playwright", "cdp", "scraping"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "playwright>=1.40.0",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+scrapling = ["scrapling>=0.5.0"]
+enhancv = ["keyring>=24.0.0"]
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21"]
+
+[project.scripts]
+sota-browser = "mcp_server:main"
+sota-browser-http = "browser_http_server:main"
+
+[project.urls]
+Homepage = "https://github.com/Das-rebel/sota-browser"
+Repository = "https://github.com/Das-rebel/sota-browser"
+Issues = "https://github.com/Das-rebel/sota-browser/issues"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"

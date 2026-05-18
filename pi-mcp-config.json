@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sota-browser": {
+      "command": "python3",
+      "args": ["mcp_server.py"],
+      "env": {
+        "BH_DEBUG_CLICKS": "false"
+      }
+    }
+  }
+}
